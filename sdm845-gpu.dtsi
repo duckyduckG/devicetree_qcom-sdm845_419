@@ -123,11 +123,10 @@
 		/* GPU related llc slices */
 		cache-slice-names = "gpu", "gpuhtw";
 
-		qcom,gpu-coresights {
+		/*qcom,gpu-coresights {
 			#address-cells = <1>;
 			#size-cells = <0>;
 			compatible = "qcom,gpu-coresight";
-
 			status = "disabled";
 
 			qcom,gpu-coresight@0 {
@@ -141,7 +140,6 @@
 					};
 				};
 			};
-
 			qcom,gpu-coresight@1 {
 				reg = <1>;
 				coresight-name = "coresight-gfx-cx";
@@ -153,7 +151,7 @@
 					};
 				};
 			};
-		};
+		};*/
 
 		qcom,l3-pwrlevels {
 			#address-cells = <1>;
