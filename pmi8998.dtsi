@@ -534,9 +534,9 @@
 					"wled-sink-base";
 			interrupts = <0x3 0xd8 0x2 IRQ_TYPE_EDGE_RISING>;
 			interrupt-names = "short";
-			qcom,current-boost-limit = <980>;	// qcom,ilim-ma
-			qcom,current-limit-microamp = <20000>;	// qcom,fs-curr-ua
-			qcom,ovp-millivolt = <29500>;		// qcom,ovp-mv
+			qcom,current-boost-limit = <970>;	// qcom,ilim-ma
+			qcom,current-limit-microamp = <25000>;	// qcom,fs-curr-ua
+			qcom,ovp-millivolt = <29600>;		// qcom,ovp-mv
 			qcom,switching-freq = <800>;		// qcom,switch-freq-khz
 			qcom,external-pfet;			// qcom,en-ext-pfet-sc-pro;
 			qcom,enabled-strings = <0 1>;
