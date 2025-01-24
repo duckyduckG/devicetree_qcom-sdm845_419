@@ -55,6 +55,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <611>;
 			dynamic-power-coefficient = <154>;
+			clock-frequency = <1766400000>;
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
@@ -95,6 +96,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <611>;
 			dynamic-power-coefficient = <154>;
+			clock-frequency = <1766400000>;
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
@@ -128,6 +130,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <611>;
 			dynamic-power-coefficient = <154>;
+			clock-frequency = <1766400000>;
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
@@ -161,6 +164,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <611>;
 			dynamic-power-coefficient = <154>;
+			clock-frequency = <1766400000>;
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
@@ -194,6 +198,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <1024>;
 			dynamic-power-coefficient = <442>;
+			clock-frequency = <2803200000>;
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
@@ -227,6 +232,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <1024>;
 			dynamic-power-coefficient = <442>;
+			clock-frequency = <2803200000>;
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
@@ -260,6 +266,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <1024>;
 			dynamic-power-coefficient = <442>;
+			clock-frequency = <2803200000>;
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
@@ -293,6 +300,7 @@
 			enable-method = "psci";
 			capacity-dmips-mhz = <1024>;
 			dynamic-power-coefficient = <442>;
+			clock-frequency = <2803200000>;
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
@@ -871,7 +879,6 @@
 		reg = <0xC264000 0x4>,
 		      <0x1fd3000 0x4>;
 		reg-names = "pshold-base", "tcsr-boot-misc-detect";
-		qcom,force-warm-reboot;
 	};
 
 	aop-msg-client {
@@ -990,8 +997,8 @@
 
 	ddr_bw_opp_table: ddr-bw-opp-table {
 		compatible = "operating-points-v2";
-		BW_OPP_ENTRY( 200, 4); /*  762 MB/s */
-		BW_OPP_ENTRY( 300, 4); /* 1144 MB/s */
+		/* BW_OPP_ENTRY( 200, 4); 762 MB/s */
+		/* BW_OPP_ENTRY( 300, 4); 1144 MB/s */
 		BW_OPP_ENTRY( 451, 4); /* 1720 MB/s */
 		BW_OPP_ENTRY( 547, 4); /* 2086 MB/s */
 		BW_OPP_ENTRY( 681, 4); /* 2597 MB/s */
@@ -3924,8 +3931,8 @@
 
 			trips {
 				active-config {
-					temperature = <115000>;
-					hysteresis = <3000>;
+					temperature = <95000>;
+					hysteresis = <30000>;
 					type = "passive";
 				};
 			};
@@ -3940,8 +3947,8 @@
 
 			trips {
 				active-config {
-					temperature = <115000>;
-					hysteresis = <3000>;
+					temperature = <95000>;
+					hysteresis = <30000>;
 					type = "passive";
 				};
 			};
