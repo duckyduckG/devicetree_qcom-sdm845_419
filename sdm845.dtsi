@@ -439,7 +439,7 @@
 	};
 
 	chosen {
-		bootargs = "rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kpti=off";
+		bootargs = "quiet rcupdate.rcu_normal_after_boot=1 noirqdebug rcu_nocbs=0-7 kpti=off cgroup.memory=nokmem,nosocket";
 	};
 
 	soc: soc { };
@@ -484,7 +484,7 @@
 			reg = <0 0x85700000 0 0x600000>;
 		};
 
-		xbl_region: xbl_region@85d00000 {
+		xbl_region: xbl_region@85e00000 {
 			no-map;
 			reg = <0 0x85e00000 0 0x100000>;
 		};
@@ -1442,7 +1442,7 @@
 
 		/* PM QoS */
 		qcom,pm-qos-cpu-groups = <0x0f 0xf0>;
-		qcom,pm-qos-cpu-group-latency-us = <100 100>;
+		qcom,pm-qos-cpu-group-latency-us = <44 44>;
 		qcom,pm-qos-default-cpu = <0>;
 
 		pinctrl-names = "dev-reset-assert", "dev-reset-deassert";
