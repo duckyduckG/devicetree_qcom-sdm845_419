@@ -526,7 +526,7 @@
 		};
 
 		pmi8998_wled: qcom,leds@d800 {
-#ifdef CONFIG_BACKLIGHT_QCOM_WLED
+#ifdef CONFIG_BACKLIGHT_QCOM_WLED_MAINLINE
 			compatible = "qcom,pmi8998-wled";
 			reg = <0xd800 0x100>,
 				<0xd900 0x100>;
