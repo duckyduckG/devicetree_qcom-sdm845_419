@@ -58,9 +58,9 @@
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			qcom,freq-domain = <&cpufreq_hw 0 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_0>;
-			sched-energy-costs = <&CPU_COST_0>;
 			L2_0: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x20000>;
@@ -96,9 +96,9 @@
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			qcom,freq-domain = <&cpufreq_hw 0 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_100>;
-			sched-energy-costs = <&CPU_COST_0>;
 			L2_100: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x20000>;
@@ -128,9 +128,9 @@
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			qcom,freq-domain = <&cpufreq_hw 0 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_200>;
-			sched-energy-costs = <&CPU_COST_0>;
 			L2_200: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x20000>;
@@ -160,9 +160,9 @@
 			cache-size = <0x8000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			qcom,freq-domain = <&cpufreq_hw 0 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_300>;
-			sched-energy-costs = <&CPU_COST_0>;
 			L2_300: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x20000>;
@@ -192,9 +192,9 @@
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
+			qcom,freq-domain = <&cpufreq_hw 1 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_400>;
-			sched-energy-costs = <&CPU_COST_1>;
 			L2_400: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x40000>;
@@ -224,9 +224,9 @@
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
+			qcom,freq-domain = <&cpufreq_hw 1 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_500>;
-			sched-energy-costs = <&CPU_COST_1>;
 			L2_500: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x40000>;
@@ -256,9 +256,9 @@
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
+			qcom,freq-domain = <&cpufreq_hw 1 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_600>;
-			sched-energy-costs = <&CPU_COST_1>;
 			L2_600: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x40000>;
@@ -288,9 +288,9 @@
 			cache-size = <0x20000>;
 			cpu-release-addr = <0x0 0x90000000>;
 			qcom,lmh-dcvs = <&lmh_dcvs1>;
+			qcom,freq-domain = <&cpufreq_hw 1 4>;
 			#cooling-cells = <2>;
 			next-level-cache = <&L2_700>;
-			sched-energy-costs = <&CPU_COST_1>;
 			L2_700: l2-cache {
 			      compatible = "arm,arch-cache";
 			      cache-size = <0x40000>;
@@ -349,67 +349,6 @@
 		};
 	};
 
-	energy_costs: energy-costs {
-		compatible = "sched-energy";
-
-		CPU_COST_0: core-cost0 {
-			busy-cost-data = <
-				 300000   31
-				 422400   38
-				 499200   42
-				 576000   46
-				 652800   51
-				 748800   58
-				 825600   64
-				 902400   70
-				 979200   76
-				1056000   83
-				1132800   90
-				1209600   97
-				1286400  105
-				1363200  114
-				1440000  124
-				1516800  136
-				1593600  152
-				1651200  167 /* speedbin 0,1 */
-				1670400  173 /* speedbin 2 */
-				1708800  186 /* speedbin 0,1 */
-				1747200  201 /* speedbin 2 */
-			>;
-		};
-		CPU_COST_1: core-cost1 {
-			busy-cost-data = <
-				300000   258
-				422400   260
-				499200   261
-				576000   263
-				652800   267
-				729600   272
-				806400   280
-				883200   291
-				960000   305
-			       1036800   324
-			       1113600   348
-			       1190400   378
-			       1267200   415
-			       1344000   460
-			       1420800   513
-			       1497600   576
-			       1574400   649
-			       1651200   732
-			       1728000   824
-			       1804800   923
-			       1881600  1027
-			       1958400  1131
-			       2035000  1228 /* speedbin 1,2 */
-			       2092000  1290 /* speedbin 1 */
-			       2112000  1308 /* speedbin 2 */
-			       2208000  1363 /* speedbin 2 */
-			>;
-		};
-	}; /* energy-costs */
-
-#ifdef CONFIG_ARM_QCOM_CPUFREQ_HW
 	soc: soc {
 		cpufreq_hw: qcom,cpufreq-hw {
 			compatible = "qcom,cpufreq-hw";
@@ -422,7 +361,6 @@
 			#freq-domain-cells = <2>;
 		};
 	};
-#endif
 
 	psci {
 		compatible = "arm,psci-1.0";
@@ -1146,28 +1084,6 @@
 		operating-points-v2 = <&keepalive_opp_table>;
 	};
 
-#ifndef CONFIG_ARM_QCOM_DEVFREQ_FW
-	cpu0_l3: qcom,cpu0-cpu-l3-lat {
-		compatible = "devfreq-simple-dev";
-		clock-names = "devfreq_clk";
-		clocks = <&clock_cpucc L3_CLUSTER0_VOTE_CLK>;
-		governor = "performance";
-	};
-
-	cpu4_l3: qcom,cpu4-cpu-l3-lat {
-		compatible = "devfreq-simple-dev";
-		clock-names = "devfreq_clk";
-		clocks = <&clock_cpucc L3_CLUSTER1_VOTE_CLK>;
-		governor = "performance";
-	};
-
-	cdsp_l3: qcom,cdsp-cdsp-l3-lat {
-		compatible = "devfreq-simple-dev";
-		clock-names = "devfreq_clk";
-		clocks = <&clock_cpucc L3_MISC_VOTE_CLK>;
-		governor = "powersave";
-	};
-#else
 	qcom,devfreq-l3 {
 		compatible = "qcom,devfreq-fw";
 		reg = <0x17d41000 0x4>, <0x17d43110 0x500>, <0x17d43920 0x4>;
@@ -1187,7 +1103,6 @@
 			compatible = "qcom,devfreq-fw-voter";
 		};
 	};
-#endif
 
 	cpu_pmu: cpu-pmu {
 		compatible = "arm,armv8-pmuv3";
@@ -1273,30 +1188,11 @@
 		reg = <0x17970018 0x4>;
 	};
 
-#ifndef CONFIG_ARM_QCOM_CPUFREQ_HW
-	clock_cpucc: qcom,cpucc@0x17d41000 {
-		compatible = "qcom,clk-cpu-osm";
-		reg = <0x17d41000 0x1400>,
-			<0x17d43000 0x1400>,
-			<0x17d45800 0x1400>;
-		reg-names = "osm_l3_base", "osm_pwrcl_base", "osm_perfcl_base";
-		vdd_l3_mx_ao-supply = <&pm8998_s6_level_ao>;
-		vdd_pwrcl_mx_ao-supply = <&pm8998_s6_level_ao>;
-
-		qcom,mx-turbo-freq = <1478400000 1689600000 3300000001>;
-		l3-devs = <&cpu0_l3 &cpu4_l3 &cdsp_l3 &msm_gpu>;
-
-		clock-names = "xo_ao";
-		clocks = <&clock_rpmh RPMH_CXO_CLK_A>;
-		#clock-cells = <1>;
-	};
-#else
 	clock_cpucc: qcom,cpucc {
 		compatible = "qcom,dummycc";
 		clock-output-names = "cpucc_clocks";
 		#clock-cells = <1>;
 	};
-#endif
 
 	clock_debug: qcom,cc-debug@100000 {
 		compatible = "qcom,debugcc-sdm845";
@@ -4136,11 +4032,7 @@
 	};
 };
 
-#ifndef CONFIG_ARM_QCOM_CPUFREQ_HW
-&clock_cpucc {
-#else
 &cpufreq_hw {
-#endif
 	qcom,cpu-isolation {
 		compatible = "qcom,cpu-isolate";
 		cpu0_isolate: cpu0-isolate {
@@ -5672,30 +5564,3 @@
 		};
 	};
 };
-
-#ifdef CONFIG_ARM_QCOM_CPUFREQ_HW
-&CPU0 {
-	qcom,freq-domain = <&cpufreq_hw 0 4>;
-};
-&CPU1 {
-	qcom,freq-domain = <&cpufreq_hw 0 4>;
-};
-&CPU2 {
-	qcom,freq-domain = <&cpufreq_hw 0 4>;
-};
-&CPU3 {
-	qcom,freq-domain = <&cpufreq_hw 0 4>;
-};
-&CPU4 {
-	qcom,freq-domain = <&cpufreq_hw 1 4>;
-};
-&CPU5 {
-	qcom,freq-domain = <&cpufreq_hw 1 4>;
-};
-&CPU6 {
-	qcom,freq-domain = <&cpufreq_hw 1 4>;
-};
-&CPU7 {
-	qcom,freq-domain = <&cpufreq_hw 1 4>;
-};
-#endif
