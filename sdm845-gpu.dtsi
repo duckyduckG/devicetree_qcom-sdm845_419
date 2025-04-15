@@ -18,11 +18,11 @@
 
 	gpu_bw_tbl: gpu-bw-tbl {
 		compatible = "operating-points-v2";
-		BW_OPP_ENTRY(   0, 4); /*    0 MB/s */
-		BW_OPP_ENTRY( 100, 4); /*  381 MB/s */
-		BW_OPP_ENTRY( 150, 4); /*  572 MB/s */
-		BW_OPP_ENTRY( 200, 4); /*  762 MB/s */
-		BW_OPP_ENTRY( 300, 4); /* 1144 MB/s */
+		/* BW_OPP_ENTRY(   0, 4);    0 MB/s */
+		/* BW_OPP_ENTRY( 100, 4);  381 MB/s */
+		/* BW_OPP_ENTRY( 150, 4);  572 MB/s */
+		/* BW_OPP_ENTRY( 200, 4);  762 MB/s */
+		/* BW_OPP_ENTRY( 300, 4); 1144 MB/s */
 		BW_OPP_ENTRY( 412, 4); /* 1571 MB/s */
 		BW_OPP_ENTRY( 547, 4); /* 2086 MB/s */
 		BW_OPP_ENTRY( 681, 4); /* 2597 MB/s */
