@@ -1785,7 +1785,6 @@
 		qcom,bark-time = <11000>;
 		qcom,pet-time = <9360>;
 		qcom,ipi-ping;
-		qcom,wakeup-enable;
 	};
 
 	qcom,turing@8300000 {
