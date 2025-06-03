@@ -34,7 +34,7 @@
 				qcom,entry-latency-us = <1562>;
 				qcom,exit-latency-us = <6562>;
 				qcom,min-residency-us = <9987>;
-				qcom,min-child-idx = <2>;
+				qcom,min-child-idx = <1>;
 				qcom,is-reset;
 				qcom,notify-rpm;
 			};
