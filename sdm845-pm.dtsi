@@ -40,6 +40,7 @@
 			};
 
 			qcom,pm-cpu@0 {
+				reg = <0>;
 				#address-cells = <1>;
 				#size-cells = <0>;
 				qcom,psci-mode-shift = <0>;
@@ -72,6 +73,7 @@
 			};
 
 			qcom,pm-cpu@1 {
+				reg = <1>;
 				#address-cells = <1>;
 				#size-cells = <0>;
 				qcom,psci-mode-shift = <0>;
