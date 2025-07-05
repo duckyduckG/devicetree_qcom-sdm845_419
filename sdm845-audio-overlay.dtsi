@@ -176,6 +176,7 @@
 			qcom,chip-select = <0>;
 			qcom,max-frequency = <24000000>;
 			qcom,mem-base-addr = <0x100000>;
+			dma-coherent;
 		};
 
 	};
