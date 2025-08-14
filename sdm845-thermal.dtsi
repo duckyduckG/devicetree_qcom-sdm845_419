@@ -48,7 +48,7 @@
 		};
 	};
 
-	lmh_dcvs0: qcom,limits-dcvs@17d78800 {
+	lmh_dcvs0: qcom,limits-dcvs {
 		compatible = "qcom,msm-hw-limits";
 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
 		reg = <0x17d78800 0x1000>,
@@ -58,7 +58,7 @@
 		qcom,legacy-lmh-enable;
 	};
 
-	lmh_dcvs1: qcom,limits-dcvs@17d70800 {
+	lmh_dcvs1: qcom,limits-dcvs {
 		compatible = "qcom,msm-hw-limits";
 		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
 		qcom,affinity = <1>;
