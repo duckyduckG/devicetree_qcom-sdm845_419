@@ -685,7 +685,6 @@
 		cooling-maps {
 			emerg_cdev2 {
 				trip = <&emerg_config2>;
-				cooling-device =
 				cooling-device = <&cpu2_isolate 1 1>;
 			};
 		};
