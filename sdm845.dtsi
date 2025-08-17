@@ -3345,6 +3345,32 @@
 		status = "ok";
 	};
 
+	wil6210: qcom,wil6210 {
+		compatible = "qcom,wil6210";
+		qcom,pcie-parent = <&pcie0>;
+		qcom,wigig-en = <&tlmm 39 0>;
+		qcom,msm-bus,name = "wil6210";
+		qcom,msm-bus,num-cases = <2>;
+		qcom,msm-bus,num-paths = <1>;
+		qcom,msm-bus,vectors-KBps =
+		<45 512 0 0>,
+		<45 512 600000 800000>; /* ~4.6Gbps (MCS12) */
+		qcom,use-ext-supply;
+		vdd-supply= <&pm8998_s7>;
+		vddio-supply= <&pm8998_s5>;
+		qcom,use-ext-clocks;
+		clocks = <&clock_rpmh RPMH_RF_CLK3>,
+		<&clock_rpmh RPMH_RF_CLK3_A>;
+		clock-names = "rf_clk3_clk", "rf_clk3_pin_clk";
+		qcom,smmu-support;
+		qcom,smmu-mapping = <0x20000000 0xe0000000>;
+		qcom,smmu-s1-en;
+		qcom,smmu-fast-map;
+		qcom,smmu-coherent;
+		qcom,keep-radio-on-during-sleep;
+		status = "disabled";
+	};
+
 	tspp: msm_tspp@0x8880000 {
 		compatible = "qcom,msm_tspp";
 		reg = <0x088a7000 0x200>, /* MSM_TSIF0_PHYS */
