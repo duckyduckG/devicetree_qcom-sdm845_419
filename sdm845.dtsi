@@ -2911,6 +2911,14 @@
 			qcom,iommu-dma-addr-pool = <0x40000000 0x20000000>;
 			qcom,iommu-dma = "bypass";
 		};
+
+		ipa_smmu_11ad: ipa_smmu_11ad {
+			compatible = "qcom,ipa-smmu-11ad-cb";
+			iommus = <&apps_smmu 0x723 0x0>;
+			dma-coherent;
+			qcom,shared-cb;
+			qcom,iommu-group = <&wil6210_pci_iommu_group>;
+		};
 	};
 
 	qcom,ipa_fws {
@@ -3362,12 +3370,8 @@
 		clocks = <&clock_rpmh RPMH_RF_CLK3>,
 		<&clock_rpmh RPMH_RF_CLK3_A>;
 		clock-names = "rf_clk3_clk", "rf_clk3_pin_clk";
-		qcom,smmu-support;
-		qcom,smmu-mapping = <0x20000000 0xe0000000>;
-		qcom,smmu-s1-en;
-		qcom,smmu-fast-map;
-		qcom,smmu-coherent;
 		qcom,keep-radio-on-during-sleep;
+		qcom,use-ap-power-save;
 		status = "disabled";
 	};
 
@@ -3557,6 +3561,27 @@
 #include "sdm845-gpu.dtsi"
 #include "sdm845-670-usb-common.dtsi"
 #include "sdm845-thermal.dtsi"
+
+&pcie0_rp {
+	#address-cells = <5>;
+	#size-cells = <0>;
+
+	wil6210_pci: wil6210_pci {
+		reg = <0 0 0 0 0>;
+		qcom,iommu-group = <&wil6210_pci_iommu_group>;
+
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		wil6210_pci_iommu_group: wil6210_pci_iommu_group {
+			reg = <0 0>;
+			qcom,iommu-dma-addr-pool = <0x20000000 0xe0000000>;
+			qcom,iommu-dma = "fastmap";
+			qcom,iommu-pagetable = "coherent";
+		};
+	};
+};
+
 
 &pm8998_temp_alarm {
 	cooling-maps {
